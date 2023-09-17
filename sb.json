@@ -1,0 +1,132 @@
+{
+  "log": {
+    "disabled": false,  
+    "level": "warn",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "google",
+        "address": "https://1.1.1.1/dns-query",
+        "address_resolver": "local",
+        "detour": "proxy"
+      },
+      {
+        "tag": "local",
+        "address": "https://223.5.5.5/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "remote",
+        "address": "fakeip"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "geosite": "category-ads-all",
+        "server": "block",
+        "disable_cache": true
+      },
+      {
+        "geosite": "cn",
+        "source_geoip": [
+          "cn",
+          "private"
+        ],
+        "server": "local"
+      },
+      {
+        "outbound": "any",
+        "server": "local"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "remote"
+      }
+    ],
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    },
+    "strategy": "prefer_ipv4"
+  },
+  "route": {
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "geosite": "category-ads-all",
+        "outbound": "block"
+      },
+      {
+        "geosite": "cn",
+        "geoip": [
+          "cn",
+          "private"
+        ],
+        "outbound": "direct"
+      }
+    ],
+    "auto_detect_interface": true
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "inet4_address": "172.19.0.1/30",
+      "inet6_address": "fdfe:dcba:9876::1/126",
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "gvisor",
+      "sniff": true,
+      "sniff_override_destination": false
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "vless",
+      "tag": "proxy",
+      "server": "49.157.28.231", 
+      "server_port": 3306,
+      "uuid": "1e61a711-1add-4484-a174-8a1e5e98a775", 
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "nijigen-works.jp", 
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "Uwt6OBeQ_tKN97rIj01QoqradYz0kKLb8gSm4HEVDmo",
+          "short_id": "a38afa56be3e80"
+        }
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    }
+  ]
+}
