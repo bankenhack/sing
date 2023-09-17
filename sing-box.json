@@ -91,11 +91,6 @@
         "rewrite_ttl": 20
       },
       {
-        "outbound": "Best Latency",
-        "server": "Best Latency-dns",
-        "rewrite_ttl": 20
-      },
-      {
         "outbound": "Lock Region ID",
         "server": "Lock Region ID-dns",
         "rewrite_ttl": 20
