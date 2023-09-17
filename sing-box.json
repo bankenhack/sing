@@ -24,12 +24,7 @@
         "strategy": "ipv4_only",
         "detour": "Internet"
       },
-      {
-        "tag": "Best Latency-dns",
-        "address": "1.1.1.1",
-        "strategy": "ipv4_only",
-        "detour": "Best Latency"
-      },
+  
       {
         "tag": "Lock Region ID-dns",
         "address": "8.8.8.8",
@@ -145,7 +140,6 @@
       "type": "selector",
       "tag": "Internet",
       "outbounds": [
-        "Best Latency",
         "Trojan GFW/TLS",
         "Trojan WS",
         "Vmess WS",
@@ -192,7 +186,6 @@
       "outbounds": [
         "direct",
         "Internet",
-        "Best Latency",
         "Lock Region ID"
       ]
     },
@@ -202,7 +195,6 @@
       "outbounds": [
         "direct",
         "Internet",
-        "Best Latency",
         "Lock Region ID"
       ]
     },
@@ -212,7 +204,6 @@
       "outbounds": [
         "direct",
         "Internet",
-        "Best Latency",
         "Lock Region ID"
       ]
     },
