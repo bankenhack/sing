@@ -229,7 +229,7 @@
       "domain_strategy": "ipv4_only",
       "tag": "Vless Reality",
       "type": "vless",
-      "server": "49.157.28.231",
+      "server": "1.1.1.1",
       "server_port": 3306,
       "uuid": "1e61a711-1add-4484-a174-8a1e5e98a775",
       "flow": "xtls-rprx-vision",
