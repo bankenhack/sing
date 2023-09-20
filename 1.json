@@ -119,14 +119,14 @@
     {
       "type": "hysteria2",
       "tag": "proxy",
-      "server": "tom.tmdsb.eu.org", 
+      "server": "www.baidu.com", 
       "server_port": 33366,
       "up_mbps": 50, 
       "down_mbps": 100, 
       "password": "tmdhack",
       "tls": {
         "enabled": true,
-        "server_name": "tom.tmdsb.eu.org", 
+        "server_name": "www.baidu.com", 
         "alpn": [
           "h3"
         ]
