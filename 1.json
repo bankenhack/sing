@@ -117,26 +117,20 @@
   ],
   "outbounds": [
     {
-      "type": "vless",
+      "type": "hysteria2",
       "tag": "proxy",
-      "server": "49.157.28.231",
-      "server_port": 3306,
-      "uuid": "1e61a711-1add-4484-a174-8a1e5e98a775",
-      "flow": "xtls-rprx-vision",
+      "server": "tom.tmdsb.eu.org", 
+      "server_port": 33366,
+      "up_mbps": 50, 
+      "down_mbps": 100, 
+      "password": "tmdhack",
       "tls": {
-          "enabled": true,
-          "server_name": "nijigen-works.jp",
-          "utls": {
-              "enabled": true,
-              "fingerprint": "chrome"
-          },
-          "reality": {
-              "enabled": true,
-              "public_key": "Uwt6OBeQ_tKN97rIj01QoqradYz0kKLb8gSm4HEVDmo",
-              "short_id": "a38afa56be3e80"
-          }
-      },
-      "packet_encoding": "xudp"
+        "enabled": true,
+        "server_name": "tom.tmdsb.eu.org", 
+        "alpn": [
+          "h3"
+        ]
+      }
     },
     {
       "type": "direct",
