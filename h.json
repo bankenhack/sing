@@ -98,11 +98,11 @@
     {
       "type": "hysteria2",
       "tag": "proxy",
-      "server": "tom.tmdsb.eu.org", 
-      "server_port": 33366,
+      "server": "www.baidu.com", 
+      "server_port": 1234566,
       "up_mbps": 50, 
       "down_mbps": 100, 
-      "password": "tmdhack",
+      "password": "sddddd",
       "tls": {
         "enabled": true,
         "server_name": "tom.tmdsb.eu.org", 
